@@ -19,13 +19,12 @@
 #define FD_TO_CLOCKID(fd)	((~(clockid_t) (fd) << 3) | CLOCKFD)
 #define CLOCKID_TO_FD(clk)	((unsigned int) ~((clk) >> 3))
 
-#define DEFAULT_PATH_SIZE       64
 #define DEFAULT_PTP_DEV_PATH    "/dev/ptp0"
 
 static PyObject *
 clock_to_sys(PyObject * Py_UNUSED(self), PyObject *args)
 {
-	char path[DEFAULT_PATH_SIZE] = DEFAULT_PTP_DEV_PATH;
+	const char *path = DEFAULT_PTP_DEV_PATH;
 	int clock_fd;
 	struct ptp_clock_caps caps;
 	clockid_t clkid;

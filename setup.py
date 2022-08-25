@@ -11,7 +11,7 @@ device (which, in my case, is meant to be KVM's paravirtualized PTP clock).
 
 setup_kwargs = {
     "name": "ptpsync",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "Synchronize the System clock from a PTP clock device",
     "long_description": long_description,
     "author": "Christos Katsakioris",
